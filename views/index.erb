@@ -1,23 +1,4 @@
 <div class="columns is-centered">
-  <div class="column is-6">
-    <div class="box has-text-centered">
-      <h1><b>Chapter <%= @random_chapter %></b></h1>
-      <p><%= @random_question['questions'] %></p>
-      <% @random_question['choices'].each.with_index(1) do |choice, index| %>
-        <div class="m15"><a class="button is-link is-block is-size-6 choice" id="choice-<%=index%>"><p><%= choice %></p></a></div>
-      <% end %>
-      <p class="is-hidden answer is-size-7"><%= @random_question['answer'] %></p>
-    </div>
-  </div>
+  <a class="button is-primary is-large m15" href="/random">RANDOM</a>
+  <a class="button is-warning is-large m15" href="/by_chapter">BY CHAPTER</a>
 </div>
-
-<script>
-  $('.choice').click(function(){
-    $(this).css({"border-color": "#ee7621", "border-width":"3px", "border-style":"solid"});
-    $('#choice-<%=@correct_index%>').removeClass('is-link').addClass('is-success');
-    $('.answer').removeClass('is-hidden')
-    if(this.id == "choice-<%=@correct_index%>"){
-      setTimeout(location.reload.bind(location), 2000);
-    }
-  })
-</script>

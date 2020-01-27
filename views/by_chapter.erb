@@ -1,0 +1,11 @@
+<div class="columns is-centered is-multiline">
+  <div class="column is-half">
+    <div class="columns is-centered is-multiline">
+      <% @questions.each do |k, _| %>
+        <div class="column is-2">
+          <a class="button is-primary is-block" href="/by_chapter/<%=k%>"><%= k %></a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
